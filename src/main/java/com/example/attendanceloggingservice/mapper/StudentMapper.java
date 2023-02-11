@@ -6,18 +6,23 @@ import com.example.attendanceloggingservice.model.output.StudentOutput;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface StudentMapper {
 
-    /*@Mapping(target="employeeId", source = "entity.id")
-    @Mapping(target="employeeName", source = "entity.name")
-    @Mapping(target="employeeStartDt", source = "entity.startDt",
-            dateFormat = "dd-MM-yyyy HH:mm:ss")*/
+    @Mapping(target="id", source = "entity.id")
+    @Mapping(target="cardId", source = "entity.cardId")
+    @Mapping(target="firstName", source = "entity.firstName")
+    @Mapping(target="lastName", source = "entity.lastName")
+    @Mapping(target="email", source = "entity.email")
+    @Mapping(target="phoneNumbers", source = "entity.phoneNumbers")
+    @Mapping(target="major", source = "entity.major")
     StudentOutput studentToStudentOutput(Student entity);
 
-    /*@Mapping(target="id", source="dto.employeeId")
-    @Mapping(target="name", source="dto.employeeName")
-    @Mapping(target="startDt", source="dto.employeeStartDt",
-            dateFormat="dd-MM-yyyy HH:mm:ss")*/
-    Student studentInputToStudent(StudentInput dto);
+    @Mapping(target="cardId", source="input.cardId")
+    @Mapping(target="firstName", source="input.firstName")
+    @Mapping(target="lastName", source="input.lastName")
+    @Mapping(target="email", source="input.email")
+    @Mapping(target="phoneNumbers", source="input.phoneNumbers")
+    @Mapping(target="major", source="input.major")
+    Student studentInputToStudent(StudentInput input);
 }

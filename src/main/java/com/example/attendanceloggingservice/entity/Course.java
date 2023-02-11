@@ -23,13 +23,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "lectures")
-public class Lecture {
+@Table(name = "courses")
+public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "lecture_id", nullable = false)
-    private Long lectureId;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -49,6 +49,6 @@ public class Lecture {
     @Column(name = "term", nullable = false)
     private Byte term;
 
-    @OneToMany(mappedBy = "lecture")
+    @OneToMany(mappedBy = "course")
     private List<AttendanceLog> attendanceLogs;
 }

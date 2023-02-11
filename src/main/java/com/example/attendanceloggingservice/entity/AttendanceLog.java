@@ -28,8 +28,8 @@ public class AttendanceLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "log_id", nullable = false)
-    private Long logId;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @Column(name = "timestamp", nullable = false)
     private Timestamp instant= Timestamp.from(Instant.now());
@@ -39,7 +39,6 @@ public class AttendanceLog {
     private Student student;
 
     @ManyToOne
-    @JoinColumn(name="lecture_id", nullable=false)
-    private Lecture lecture;   // decide which lecture the received log is for, based on classRoom + startTime + endTime
-
+    @JoinColumn(name="course_id", nullable=false)
+    private Course course;   // decide which course the received log is for, based on classRoom + startTime + endTime
 }
