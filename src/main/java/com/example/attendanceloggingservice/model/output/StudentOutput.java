@@ -16,7 +16,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class StudentOutput implements Serializable {
 
-    private Long studentId;
+    private Long id;
     private String cardId;
     private String firstName;
     private String lastName;

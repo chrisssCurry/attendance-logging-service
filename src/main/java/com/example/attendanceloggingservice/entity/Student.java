@@ -1,7 +1,6 @@
 package com.example.attendanceloggingservice.entity;
 
 import com.example.attendanceloggingservice.model.Major;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,8 +30,8 @@ import java.util.List;
 public class Student {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "student_id", nullable = false)
-    private Long studentId;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @Id
     @Column(name = "card_id", nullable = false)
@@ -59,6 +58,5 @@ public class Student {
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    @JsonIgnore
     private List<AttendanceLog> attendanceLogs;
 }

@@ -1,6 +1,6 @@
 package com.example.attendanceloggingservice.service;
 
-import com.example.attendanceloggingservice.entity.Student;
+import com.example.attendanceloggingservice.model.output.StudentOutput;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
@@ -8,5 +8,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface StudentService {
 
-    Page<Student> fetchStudentsByMajor(String majorName, Integer pageSize);
+    Page<StudentOutput> fetchStudentsByMajor(String majorName, Integer pageSize);
 }

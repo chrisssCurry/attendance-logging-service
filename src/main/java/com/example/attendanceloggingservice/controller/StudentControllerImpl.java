@@ -1,6 +1,7 @@
 package com.example.attendanceloggingservice.controller;
 
 import com.example.attendanceloggingservice.entity.Student;
+import com.example.attendanceloggingservice.model.output.StudentOutput;
 import com.example.attendanceloggingservice.service.StudentService;
 import com.example.attendanceloggingservice.util.Constants;
 import org.slf4j.Logger;
@@ -14,24 +15,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.example.attendanceloggingservice.util.Constants.DEFAULT_PAGE_SIZE;
+
 
 @RestController
 @RequestMapping(value = "/students")
 public class StudentControllerImpl {
-
-    private final Logger logger = LoggerFactory.getLogger(StudentControllerImpl.class);
-
-    private final StudentService studentService;
 
     @Autowired
     public StudentControllerImpl(StudentService studentService) {
         this.studentService = studentService;
     }
 
+    private final Logger logger = LoggerFactory.getLogger(StudentControllerImpl.class);
+
+    private final StudentService studentService;
+
     @GetMapping
     @ResponseBody
-    public ResponseEntity<Page<Student>> getStudentsByMajor(@RequestParam(value = "major") String majorName) {
-        Page<Student> students = studentService.fetchStudentsByMajor(majorName, Constants.DEFAULT_PAGE_SIZE);
+    public ResponseEntity<Page<StudentOutput>> getStudentsByMajor(@RequestParam(value = "major") String majorName) {
+        Page<StudentOutput> students = studentService.fetchStudentsByMajor(majorName, DEFAULT_PAGE_SIZE);
+        logger.info("Found {} total students for the given Major name: '{}', returning {} students...",
+                students.getTotalElements(), majorName, DEFAULT_PAGE_SIZE);
         return ResponseEntity.ok(students);
     }
 }
