@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: cristian
+
+  - include:
+      file: db/changelog/DDL/001__create_tables.sql
+
+  - include:
+      file: db/changelog/DML/002__insert_1000_students.sql
