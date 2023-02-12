@@ -1,6 +1,6 @@
-package com.example.attendanceloggingservice.entity;
+package com.example.attendance.entity;
 
-import com.example.attendanceloggingservice.model.Major;
+import com.example.attendance.model.Major;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.example.attendanceloggingservice.util;
+package com.example.attendance.util;
 
 import lombok.experimental.UtilityClass;
 

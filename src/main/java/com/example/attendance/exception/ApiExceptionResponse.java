@@ -1,4 +1,4 @@
-package com.example.attendanceloggingservice.exception;
+package com.example.attendance.exception;
 
 import org.springframework.http.HttpStatus;
 

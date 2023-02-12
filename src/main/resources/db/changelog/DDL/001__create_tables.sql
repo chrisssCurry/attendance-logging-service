@@ -28,7 +28,6 @@ CREATE TABLE students (
     email VARCHAR(255),
     phone VARCHAR(255),
     major VARCHAR(255) NOT NULL,
-    year SMALLINT,
     PRIMARY KEY (card_id)
 );
 
