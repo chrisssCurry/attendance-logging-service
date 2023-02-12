@@ -1,8 +1,8 @@
-package com.example.attendanceloggingservice.mapper;
+package com.example.attendance.mapper;
 
-import com.example.attendanceloggingservice.entity.Student;
-import com.example.attendanceloggingservice.model.input.StudentInput;
-import com.example.attendanceloggingservice.model.output.StudentOutput;
+import com.example.attendance.entity.Student;
+import com.example.attendance.model.input.StudentInput;
+import com.example.attendance.model.output.StudentOutput;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

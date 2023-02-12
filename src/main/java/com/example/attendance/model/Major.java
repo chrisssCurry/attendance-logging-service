@@ -1,6 +1,4 @@
-package com.example.attendanceloggingservice.model;
-
-import java.util.Arrays;
+package com.example.attendance.model;
 
 public enum Major {
     EE("Electrical engineering"),

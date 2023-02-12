@@ -1,4 +1,4 @@
-package com.example.attendanceloggingservice.entity;
+package com.example.attendance.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

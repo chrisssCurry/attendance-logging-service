@@ -1,4 +1,4 @@
-package com.example.attendanceloggingservice.model.output;
+package com.example.attendance.model.output;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
